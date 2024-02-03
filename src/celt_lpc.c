@@ -29,7 +29,11 @@
 #include "config.h"
 #endif
 
+#if defined(WIN32) || defined(__WIN32__) || defined(_WIN32)
+#define alloca _alloca
+#else
 #include <alloca.h>
+#endif
 #include "celt_lpc.h"
 #include "arch.h"
 #include "common.h"

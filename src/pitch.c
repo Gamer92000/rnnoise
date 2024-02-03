@@ -35,7 +35,11 @@
 #include "config.h"
 #endif
 
+#if defined(WIN32) || defined(__WIN32__) || defined(_WIN32)
+#define alloca _alloca
+#else
 #include <alloca.h>
+#endif
 #include "pitch.h"
 #include "common.h"
 //#include "modes.h"
